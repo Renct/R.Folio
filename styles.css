@@ -1,0 +1,394 @@
+html {
+  width: 100%; /* 横幅を100%に固定 */
+  height: 100%; /* 高さを100%に固定 */
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+.body {
+  overflow: hidden; 
+  width: 100%; /* 横幅を100%に固定 */
+  height: 100%; /* 高さを100%に固定 */
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 10vw); /* 上に120pxの余白を確保するために高さを調整 */
+  display: flex;
+  object-position: bottom center; /* 画像を下基準に配置 */
+  justify-content: center; /* 横方向の中央寄せ */
+  align-items: flex-end; /* 縦方向は下に寄せる */
+  padding-top: 10vw; /* 上に120pxの余白を追加 */
+}
+
+#homeLP {
+  position: relative;
+  width: auto;
+  height: 100%; /* 高さをウィンドウに合わせる */
+  object-fit: cover; /* 画像を切り取って親要素に合わせる */
+  object-position: bottom center; /* 画像を下基準に配置 */
+  max-width: calc(100% - 10vw); /* 画像の横幅を120pxずつ余白を入れた状態に設定 */
+  margin-left: 5vw; /* 左側に120pxの余白 */
+  margin-right: 5vw; /* 右側に120pxの余白 */
+  
+}
+
+
+nav {
+  position: absolute;
+  top: 0; /* ページ上部に配置 */
+  right: 0; /* ページ右端に配置 */
+  z-index: 100; /* 背景や他の要素より前面に表示 */
+  transform: translateX(-15px) translateY(5px); /*文字位置*/
+
+}
+
+/* リストのスタイル */
+nav ul {
+  display: flex; /* 横並びにする */
+  list-style: none; /* 箇条書きの点を消す */
+  margin: 0; /* 外側の余白をリセット */
+  padding: 0; /* 内側の余白をリセット */
+  font-family: "acumin-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wdth" 50, "wght" 100;
+}
+
+/* 各リスト項目 */
+nav ul li {
+  margin: 0 20px; /* 項目間の間隔 */
+}
+
+/* リンクのスタイル */
+nav ul li a {
+  text-decoration: none; /* 下線を消す */
+  color: black; /* 文字色 */
+  font-size: 40px; /* フォントサイズ */
+}
+
+
+#logo {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 20; 
+  height: 15vw;
+  width: auto;
+  animation: fadeInBlur 1s ease-out forwards;
+}
+
+@keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+.catch-copy1 {
+  position: absolute;
+  top: calc(60% - 60px); 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: "kozuka-mincho-pr6n", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: clamp(16px, 4vw, 65px);
+  color: white;
+}
+
+.catch-copy2 {
+  position: absolute;
+  z-index: 1;
+  top: calc(60% + 80px); 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: "kozuka-mincho-pr6n", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 42px;
+  font-size: clamp(8px, 4vw, 45px);
+  color: white;
+}
+
+
+#backGR {
+  position: absolute;
+  left: 50%;
+  bottom: -126%;
+  object-fit: cover;
+  transform: translate(-50%, 50%);
+  z-index: -1;
+}
+
+.backGR1 {
+  position: absolute;
+  left: 50%;
+  bottom: -5%;
+  height: 103.5vw;
+  width: auto;
+  object-fit: cover;
+  transform: translate(-50%, 50%);
+}
+
+.midashi1 {
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translate(-50%, 0%);
+  width: 10vw;
+  height: auto;
+  z-index: 60;
+}
+
+.rectangle {
+  position: absolute;
+  width: 43vw;
+  height: 30vw;
+  left: 26%;
+  bottom: -90%;
+  transform: translate(-50%, 0%);
+  border: 2px solid black;
+  background-color: transparent;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* 影を濃く＆広げる */
+}
+
+.pt640st {
+  position: absolute;
+  width: 28vw;
+  left: 38%;
+  bottom: -83%;
+  transform: translate(-50%, 0%);
+  z-index: 100;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.pt340st {
+  position: absolute;
+  width: 13vw;
+  left: 14%;
+  bottom: -62%;
+  transform: translate(-50%, 0%);
+  z-index: 100;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box {
+  position: absolute;
+  width: 41vw;
+  height: 30vw;
+  left: 75%;
+  bottom: -90%;
+  transform: translate(-50%, 0%);
+  background-color: rgba(215, 215, 215, 0.5);
+  border-radius: 40px; /* 四隅を丸くする */
+  border: none; /* 外枠を無しに */
+}
+.Exp1 {
+  position: absolute;
+  left: 75%;
+  bottom: -40%;
+  transform: translate(-50%, 50%);
+  font-family: "kozuka-mincho-pr6n", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 42px;
+  font-size: 2.5vw;
+  color: black;
+}
+.Exp2 {
+  position: absolute;
+  left: 75%;
+  bottom: -80%;
+  transform: translate(-50%, 0%);
+  font-family: "kozuka-mincho-pr6n", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: clamp(5px, 2vw, 50px);
+  color: black;
+  width: 25ch
+  
+}
+
+#midashi2 {
+  position: absolute;
+  left: 50%;
+  bottom: -110%;
+  transform: translate(-50%, 50%);
+  width: 7vw;
+  height: auto;
+  z-index: 60;
+}
+
+#setumei {
+  position: absolute;
+  left: 69%;
+  bottom: -127%;
+  transform: translate(-50%, 50%);
+  font-family: "kozuka-mincho-pr6n", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: clamp(5px, 2.5vw, 50px);
+  color: black;
+  width: 25ch
+}
+
+.vertical-line0 {
+  position: absolute;
+  left: 50%;
+  bottom: -101.1%;
+  transform: translate(-50%, 0%);
+  width: 100%; /* 線の厚さ */
+  height: 1px; /* 線の長さ */
+  background-color: black; /* 線の色を赤に変更 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.image-container {
+  position: absolute;
+  left: 80%;
+  bottom: -202%;
+  transform: translate(-50%, 0%);
+}
+.image-container img {
+  width: 25vw; /* 幅を2vwに設定 */
+  height: auto; /* アスペクト比を維持 */
+}
+
+.image-pano {
+  position: absolute;
+  left: 25%;
+  bottom: -107%;
+  transform: translate(-50%, 50%);
+  width: 37vw;
+  height: auto;
+}
+
+.pano-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* トランジション効果 */
+}
+
+.pano-image.active {
+  opacity: 1; /* 表示される画像 */
+  z-index: 1;
+}
+
+.video-face {
+  position: absolute;
+  left: 25%;
+  bottom: -175%;
+  transform: translate(-50%, 50%);
+  width: 37vw;
+  height: auto;
+}
+
+#Exp4 {
+  position: absolute;
+  left: 62%;
+  bottom: -161%;
+  transform: translate(-50%, 50%);
+  font-family: darumadrop-one, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 2.5vw;
+}
+
+#fukidashi0 {
+  position: absolute;
+  left: 63%;
+  bottom: -162%;
+  transform: translate(-50%, 50%);
+  width: 17vw;
+  height: auto;
+}
+
+#X-image {
+  position: absolute;
+  left: 60%;
+  bottom: -272%;
+  transform: translate(-50%, 50%);
+  width: 5vw;
+  height: auto;
+}
+
+#gmail {
+  position: absolute;
+  left: 60%;
+  bottom: -290%;
+  transform: translate(-50%, 50%);
+  width: 5.5vw;
+  height: auto;
+}
+#prsls {
+  position: absolute;
+  left: 28%;
+  bottom: -260%;
+  transform: translate(-50%, 50%);
+  width: 50vw;
+  height: auto;
+}
+#ExpCN {
+  position: absolute;
+  left: 70%;
+  bottom: -245%;
+  transform: translate(-50%, 50%);
+  font-family: "kozuka-mincho-pr6n", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 3vw;
+  color: azure;
+}
+#ExpCN-1 {
+  position: absolute;
+  left: 66.5%;
+  bottom: -260%;
+  transform: translate(-50%, 50%);
+  font-family: "deuterium-variable", sans-serif;
+  font-variation-settings: "wght" 400;
+  font-size: 4vw;
+  color: azure;
+}
+#X-mail {
+  position: absolute;
+  left: 73.5%;
+  bottom: -272%;
+  transform: translate(-50%, 50%);
+  font-family: "deuterium-variable", sans-serif;
+  font-variation-settings: "wght" 400;
+  font-size: 3vw;
+  color: azure;
+
+}
+
+#Gmail-mail {
+  position: absolute;
+  left: 80.5%;
+  bottom: -290%;
+  transform: translate(-50%, 50%);
+  font-family: "deuterium-variable", sans-serif;
+  font-variation-settings: "wght" 400;
+  font-size: 3vw;
+  color: azure;
+  
+}
+
+.sec {
+  position: relative;
+  height: 100vh; /* ビューポートの高さに合わせる */
+  scroll-snap-align: start; /* スクロール位置を調整 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0; /* 余計なパディングを削除 */
+  margin: 0 0 0 0;
+}
+
